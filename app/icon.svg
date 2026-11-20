@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Resume Builder</title>
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#263F78"/>
+      <stop offset="1" stop-color="#18264C"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#bg)"/>
+  <path d="M19 11h18l11 11v29a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4V15a4 4 0 0 1 4-4Z" fill="#fff"/>
+  <path d="M37 11v8a3 3 0 0 0 3 3h8L37 11Z" fill="#DCE7FA"/>
+  <circle cx="26" cy="31" r="5" fill="#42C6B2"/>
+  <path d="M18.5 43a7.5 7.5 0 0 1 15 0v1h-15v-1Z" fill="#42C6B2"/>
+  <path d="M38 31h5M38 37h5M19 49h24" stroke="#34496F" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="m42 43 2.2 2.2 4.3-4.6" fill="none" stroke="#F5A66B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
