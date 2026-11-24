@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { absoluteSiteUrl, siteUrl } from "@/lib/site";
 
 const inter = localFont({
   src: "../public/fonts/inter-latin-wght-normal.woff2",
@@ -13,9 +14,32 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ResumeKit — Build your resume for free",
+  metadataBase: siteUrl,
+  title: {
+    default: "Free Resume Builder | Build and Download a Resume PDF",
+    template: "%s | ResumeKit",
+  },
   description:
-    "Create a clear, professional resume in minutes. ResumeKit is simple, free, and made for your next opportunity.",
+    "Build a clear resume with a live preview, organize your experience, and download a searchable A4 PDF. Free to use, no account required.",
+  applicationName: "ResumeKit",
+  category: "productivity",
+  alternates: siteUrl ? { canonical: absoluteSiteUrl("/") } : undefined,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "ResumeKit",
+    title: "Free Resume Builder | Build and Download a Resume PDF",
+    description:
+      "Build a clear resume with a live preview, organize your experience, and download a searchable A4 PDF.",
+    url: absoluteSiteUrl("/"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Resume Builder | ResumeKit",
+    description:
+      "Create a clear resume with a live preview and download a searchable A4 PDF. Free to use, no account required.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -28,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <Navbar />
-          {children}
+          <div className=" flex-1">{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

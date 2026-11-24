@@ -1,11 +1,18 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { ArrowUpRight, FileText } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { GithubIcon } from "@/components/shared/github-icon";
 import { homePrimaryButtonClass } from "@/components/shared/home-styles";
-import { MainNavigation } from "@/components/layout/main-navigation";
-import { MobileNavigation } from "@/components/layout/mobile-navigation";
+import {
+  MainNavigation,
+  MainNavigationFallback,
+} from "@/components/layout/main-navigation";
+import {
+  MobileNavigation,
+  MobileNavigationFallback,
+} from "@/components/layout/mobile-navigation";
 
 export function Navbar() {
   return (
@@ -24,16 +31,18 @@ export function Navbar() {
           </span>
         </Link>
 
-        <MainNavigation />
+        <Suspense fallback={<MainNavigationFallback />}>
+          <MainNavigation />
+        </Suspense>
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
           <a
-            href="https://github.com"
+            href="https://github.com/MohamedAyman-11/resume-builder"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit GitHub"
-            title="GitHub"
+            aria-label="View ResumeKit on GitHub"
+            title="GitHub repository"
             className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 ease-out hover:bg-primary/10 hover:text-primary active:scale-95 active:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 motion-reduce:transition-none motion-reduce:active:scale-100"
           >
             <GithubIcon className="size-[18px]" />
@@ -41,28 +50,31 @@ export function Navbar() {
           <Button
             nativeButton={false}
             render={
-              <Link href="/builder">
-                Get started{" "}
+              <Link href="/resumes">
+                Create a resume{" "}
                 <ArrowUpRight aria-hidden="true" className="size-4" />
               </Link>
             }
-            className={`${homePrimaryButtonClass} h-10!`}
+            size="lg"
+            className={homePrimaryButtonClass}
           />
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <a
-            href="https://github.com"
+            href="https://github.com/MohamedAyman-11/resume-builder"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit GitHub"
-            title="GitHub"
+            aria-label="View ResumeKit on GitHub"
+            title="GitHub repository"
             className="flex size-10 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 ease-out hover:bg-primary/10 hover:text-primary active:scale-95 active:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 motion-reduce:transition-none motion-reduce:active:scale-100"
           >
             <GithubIcon className="size-[18px]" />
           </a>
-          <MobileNavigation />
+          <Suspense fallback={<MobileNavigationFallback />}>
+            <MobileNavigation />
+          </Suspense>
         </div>
       </div>
     </header>

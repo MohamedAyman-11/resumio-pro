@@ -7,14 +7,24 @@ import { navigationLinks } from "@/constants/home.constants";
 export function MainNavigation() {
   const pathname = usePathname();
 
+  return <NavigationItems pathname={pathname} />;
+}
+
+export function MainNavigationFallback() {
+  return <NavigationItems />;
+}
+
+function NavigationItems({ pathname }: { pathname?: string }) {
   return (
     <nav
       aria-label="Main navigation"
       className="hidden items-center gap-1 md:flex"
     >
       {navigationLinks.map((link) => {
-        const isActive =
-          pathname === link.href || pathname.startsWith(`${link.href}/`);
+        const isActive = Boolean(
+          pathname &&
+          (pathname === link.href || pathname.startsWith(`${link.href}/`)),
+        );
 
         return (
           <Link

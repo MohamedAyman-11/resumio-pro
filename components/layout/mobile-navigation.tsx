@@ -88,16 +88,16 @@ export function MobileNavigation() {
                     nativeButton={false}
                     render={
                       <Link
-                        href="/builder"
+                        href="/resumes"
                         className={cn(
-                          buttonVariants(),
+                          buttonVariants({ size: "lg", variant: "default" }),
                           homePrimaryButtonClass,
                           "w-full",
                         )}
                       />
                     }
                   >
-                    Get started{" "}
+                    Create a resume{" "}
                     <ArrowUpRight aria-hidden="true" className="size-4" />
                   </DrawerClose>
                 </div>
@@ -106,6 +106,20 @@ export function MobileNavigation() {
           </DrawerViewport>
         </DrawerPortal>
       </Drawer>
+    </div>
+  );
+}
+
+export function MobileNavigationFallback() {
+  return (
+    <div className="lg:hidden">
+      <button
+        type="button"
+        aria-label="Open navigation menu"
+        className="flex size-10 items-center justify-center rounded-lg text-muted-foreground"
+      >
+        <Menu aria-hidden="true" className="size-5" />
+      </button>
     </div>
   );
 }

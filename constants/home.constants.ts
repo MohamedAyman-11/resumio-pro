@@ -1,11 +1,11 @@
 import {
-  Check,
   Download,
+  Eye,
   FileText,
-  LayoutTemplate,
+  FolderKanban,
+  LockKeyhole,
   MonitorSmartphone,
-  Moon,
-  Sparkles,
+  Rows3,
 } from "lucide-react";
 import type {
   HomeFeature,
@@ -15,73 +15,76 @@ import type {
 } from "@/types/home.types";
 
 export const navigationLinks: HomeLink[] = [
-  { label: "Create Resume", href: "/builder" },
-  { label: "Your Resumes", href: "/resumes" },
+  { label: "Features", href: "/features" },
+  { label: "Resume guide", href: "/resume-guide" },
+  { label: "My resumes", href: "/resumes" },
 ];
 
 export const footerLinks: HomeLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Create Resume", href: "/builder" },
-  { label: "Your Resumes", href: "/resumes" },
+  { label: "Features", href: "/features" },
+  { label: "Resume guide", href: "/resume-guide" },
+  { label: "My resumes", href: "/resumes" },
 ];
 
 export const homeSteps: HomeStep[] = [
   {
     number: "01",
-    title: "Bring your story",
+    title: "Start with your story",
     description:
-      "Gather your experience, education, and the skills you want employers to remember.",
+      "Add your details once, from your contact information to the experience you want employers to notice.",
     icon: FileText,
   },
   {
     number: "02",
-    title: "Make it yours",
+    title: "Build it section by section",
     description:
-      "Arrange your strengths in a clean, professional layout that is easy to scan.",
-    icon: LayoutTemplate,
+      "Use focused fields, add the sections that fit your background, and review the live A4 preview as you go.",
+    icon: Eye,
   },
   {
     number: "03",
-    title: "Get ready to apply",
+    title: "Download and apply",
     description:
-      "Review your resume, then download a polished PDF that is ready to share.",
+      "Save a real, searchable PDF with selectable text and working links, ready to send or print.",
     icon: Download,
   },
 ];
 
 export const homeFeatures: HomeFeature[] = [
   {
-    title: "Free, always",
+    title: "A live preview",
     description:
-      "Create a professional resume without subscriptions, paywalls, or surprise fees.",
-    icon: Check,
+      "See your resume take shape while you edit, with the same clean A4 layout from start to download.",
+    icon: Eye,
   },
   {
-    title: "Easy from the first step",
+    title: "All the sections you need",
     description:
-      "Straightforward prompts help you focus on what to say, not how to design it.",
-    icon: Sparkles,
+      "Add experience, internships, skills, projects, education, certifications, languages, and volunteering.",
+    icon: Rows3,
   },
   {
-    title: "Designed to be read",
+    title: "A real PDF download",
     description:
-      "Thoughtful typography and structure put your experience front and center.",
-    icon: LayoutTemplate,
-  },
-  {
-    title: "Ready to share",
-    description:
-      "Take a polished PDF with you, ready to send or print when opportunity calls.",
+      "Export selectable, searchable text and clickable links instead of a screenshot of the page.",
     icon: Download,
   },
   {
-    title: "Your theme, your comfort",
-    description: "Choose light or dark mode, or follow your device setting.",
-    icon: Moon,
+    title: "Multiple resume versions",
+    description:
+      "Keep separate resumes for different roles in your personal resume library.",
+    icon: FolderKanban,
   },
   {
-    title: "Fits your screen",
-    description: "A comfortable experience on desktop, tablet, and mobile.",
+    title: "Saved in your browser",
+    description:
+      "Your resume data stays in this browser’s local storage. No account is needed, and there is no cloud sync.",
+    icon: LockKeyhole,
+  },
+  {
+    title: "Simple, readable design",
+    description:
+      "A single-column A4 layout keeps the focus on your experience and makes every section easy to scan.",
     icon: MonitorSmartphone,
   },
 ];
@@ -95,36 +98,31 @@ export const homeQuestions: HomeQuestion[] = [
   {
     question: "Where is my data stored?",
     answer:
-      "This homepage does not accept resume information. We will explain how your data is handled before resume creation becomes available.",
+      "Your resumes are stored in local storage in this browser. They are not synced to an account or cloud, so they stay available on this browser and device until its site data is cleared.",
   },
   {
     question: "Do I need to create an account?",
     answer:
-      "You can explore the site without signing in. The resume creation experience is being designed to make getting started straightforward.",
+      "No. You can create and manage resumes without signing up or sharing an email address.",
   },
   {
-    question: "Is the PDF actually good? Or is it a screenshot?",
+    question: "Is the downloaded PDF a screenshot?",
     answer:
-      "PDF export is part of the planned experience. The goal is a real document with selectable text—not an image of your resume.",
+      "It is a real A4 PDF with selectable, searchable text and clickable links—not a flattened screenshot.",
   },
   {
-    question: "Are the resumes ATS-friendly?",
+    question: "Does the resume work with applicant tracking systems?",
     answer:
-      "The layouts use readable text and familiar section headings to make your experience clear. Applicant tracking systems vary, so no format can guarantee a particular result.",
+      "The single-column layout uses readable text and familiar section headings. Applicant tracking systems vary, so no resume can guarantee a particular result.",
   },
   {
-    question: "How is this different from Canva or Zety?",
+    question: "Can I create more than one resume?",
     answer:
-      "ResumeKit keeps the focus on resumes: clear steps, professional layouts, and a free, straightforward experience.",
+      "Yes. Create separate versions for different roles and manage them from My resumes.",
   },
   {
-    question: "Does it work offline?",
+    question: "Can I share or access a resume on another device?",
     answer:
-      "You will need an internet connection to visit the website. Offline resume building is not part of this release.",
-  },
-  {
-    question: "Can I create multiple resumes?",
-    answer:
-      "Managing tailored resumes for different roles is part of the product direction. The resume library is not included in this release.",
+      "Resume data is stored only in your current browser. Download the PDF to share it, and keep a copy if you need to use another device.",
   },
 ];

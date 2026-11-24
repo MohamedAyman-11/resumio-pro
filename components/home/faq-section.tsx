@@ -19,13 +19,13 @@ export function FaqSection() {
           description="Quick answers about the resume builder and what to expect."
         />
 
-        <Accordion className="divide-y divide-border border-y border-border">
+        <Accordion className="gap-3">
           {homeQuestions.map(({ question, answer }) => (
-            <AccordionItem key={question} value={question} className="border-0">
-              <AccordionTrigger className="py-4 text-sm transition-colors hover:text-primary sm:text-base">
+            <AccordionItem key={question} value={question}>
+              <AccordionTrigger>
                 {question}
               </AccordionTrigger>
-              <AccordionContent className="max-w-2xl pr-8 pb-5 text-sm leading-6 text-muted-foreground">
+              <AccordionContent className="max-w-2xl text-sm">
                 {answer}
               </AccordionContent>
             </AccordionItem>

@@ -12,15 +12,15 @@ export function ResumePreviewSection() {
         <div className="mx-auto">
           <SectionHeading
             align="left"
-            eyebrow="RESUME PREVIEW"
-            title="Your experience, easy to scan."
-            description="A clean layout gives your work history, education, and skills room to speak for themselves."
+            eyebrow="A CLEAN A4 LAYOUT"
+            title="Keep the focus on your experience."
+            description="The classic single-column format keeps your contact details, work, education, and skills easy to find."
           />
           <div className="mt-6 flex  justify-center lg:justify-start">
             <Button
               nativeButton={false}
               render={
-                <Link href="/builder">
+                <Link href="/resumes">
                   Create my resume{" "}
                   <ArrowRight aria-hidden="true" className="size-4" />
                 </Link>
