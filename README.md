@@ -1,38 +1,31 @@
+<div align="center">
+
 # Resumio
 
-Resumio is a browser-based resume builder. Create multiple resumes, edit ten sections with a live A4 preview, and download a searchable PDF with clickable links.
+### A resume that gets to the point.
+
+Build a clear, polished resume in your browser. Shape your experience in focused sections, see a live A4 preview, and download a searchable PDF—no account required.
+
+</div>
 
 ## Features
 
-- Personal information and profile summary
-- Experience and internships
-- Skills, projects, and project links
-- Education, certifications, languages, and volunteering
-- Live preview and real PDF export through `@react-pdf/renderer`
-- Multiple resume documents in a local browser library
-- Light and charcoal dark themes
+- **Live A4 preview** — See your resume take shape as you edit.
+- **Ten guided sections** — Organize experience, skills, education, and more.
+- **Searchable PDF export** — Download a clean document with selectable text and clickable links.
+- **Multiple resume versions** — Keep tailored resumes together in your library.
+- **Private by default** — Resumes stay in your browser; no account or cloud sync.
 
-## Data storage
+## Tech stack
 
-Resume data is stored in the current browser’s `localStorage`. There is no account or cloud sync. The library is available only in the browser and device where it was created. Download the PDF to keep a portable copy. Clearing site data in the browser removes saved resumes.
+<p>
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white" />
+  <img alt="React" src="https://img.shields.io/badge/React-149ECA?logo=react&logoColor=white" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" />
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white" />
+  <img alt="React PDF" src="https://img.shields.io/badge/React_PDF-20232A?logo=react&logoColor=61DAFB" />
+</p>
 
-## Run locally
+## Links
 
-```bash
-npm install
-npm run dev
-```
-
-## Checks
-
-```bash
-npm run lint
-npx tsc --noEmit
-npm run build
-```
-
-## Production SEO setup
-
-Set `NEXT_PUBLIC_SITE_URL` to the public site origin before deploying. It is used to generate canonical URLs, the sitemap, robots sitemap reference, and share metadata. `.env.example` shows the required format.
-
-The public sitemap contains the home page, features page, and resume writing guide. The resume library and editor are marked `noindex` because they are user workspaces.
+[GitHub repository](https://github.com/MohamedAyman-11/resume-builder)

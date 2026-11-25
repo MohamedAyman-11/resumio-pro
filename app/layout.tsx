@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { absoluteSiteUrl, siteUrl } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = localFont({
   src: "../public/fonts/inter-latin-wght-normal.woff2",
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
