@@ -31,11 +31,11 @@
 ## Tech stack
 
 <p>
-  <img src="https://img.shields.io/badge/Next.js-16-111827?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
-  <img src="https://img.shields.io/badge/React-19-087EA4?style=flat-square&logo=react&logoColor=white" alt="React 19" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript 5" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
-  <img src="https://img.shields.io/badge/React_PDF-4-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React PDF 4" />
+  <img src="https://img.shields.io/badge/Next.js-16-111827?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-087EA4?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
+  <img src="https://img.shields.io/badge/React_PDF-4-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React PDF 4" />
 </p>
 
 ## Contact
@@ -43,7 +43,7 @@
 Have a suggestion or need a customization? Reach out:
 
 <p>
-  <a href="mailto:mohamedaymanhashis13@gmail.com"><img src="https://img.shields.io/badge/Email-Contact%20me-c0392b?style=flat-square&logo=gmail&logoColor=white" alt="Email Mohamed Ayman" /></a>
-  <a href="https://www.linkedin.com/in/mohamedayman-dev/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
-  <a href="https://mohamedaymann.tech"><img src="https://img.shields.io/badge/Portfolio-Visit-334155?style=flat-square&logo=googlechrome&logoColor=white" alt="Visit portfolio" /></a>
+  <a href="mailto:mohamedaymanhashis13@gmail.com"><img src="https://img.shields.io/badge/Email-Contact%20me-c0392b?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Mohamed Ayman" /></a>
+  <a href="https://www.linkedin.com/in/mohamedayman-dev/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
+  <a href="https://mohamedaymann.tech"><img src="https://img.shields.io/badge/Portfolio-Visit-334155?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit portfolio" /></a>
 </p>
