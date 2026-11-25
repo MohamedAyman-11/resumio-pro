@@ -102,7 +102,7 @@ const CreateResumeForm = ({ setOpen }: Props) => {
             </FieldLabel>
           </Field>
         </div>
-        <div className="px-6 pb-4  border-t border-border">
+        <div className="px-4 pb-4  border-t border-border">
           <DialogFooter className="border-0">
             <DialogClose
               render={
