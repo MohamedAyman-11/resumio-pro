@@ -47,12 +47,19 @@ function DrawerViewport({
   );
 }
 
-function DrawerPopup({ className, ...props }: DrawerPrimitive.Popup.Props) {
+function DrawerPopup({
+  className,
+  placement = "right",
+  ...props
+}: DrawerPrimitive.Popup.Props & { placement?: "right" | "bottom" }) {
   return (
     <DrawerPrimitive.Popup
       data-slot="drawer-popup"
+      data-placement={placement}
       className={cn(
-        "h-dvh w-[min(22rem,calc(100vw-2rem))] max-w-full overflow-y-auto overscroll-contain border-l border-border bg-background p-5 text-foreground shadow-2xl outline-none [transform:translateX(var(--drawer-swipe-movement-x))] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none data-swiping:select-none data-ending-style:[transform:translateX(100%)] data-starting-style:[transform:translateX(100%)]",
+        placement === "bottom"
+          ? "pointer-events-auto fixed inset-x-0 bottom-0 z-50 h-[min(92dvh,900px)] w-full max-w-full overflow-hidden rounded-t-2xl border-x-0 border-t border-border bg-background p-0 text-foreground shadow-2xl outline-none [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none data-swiping:select-none data-ending-style:[transform:translateY(100%)] data-starting-style:[transform:translateY(100%)]"
+          : "h-dvh w-[min(22rem,calc(100vw-2rem))] max-w-full overflow-y-auto overscroll-contain border-l border-border bg-background p-5 text-foreground shadow-2xl outline-none [transform:translateX(var(--drawer-swipe-movement-x))] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none data-swiping:select-none data-ending-style:[transform:translateX(100%)] data-starting-style:[transform:translateX(100%)]",
         className,
       )}
       {...props}
@@ -106,6 +113,20 @@ function DrawerClose({ className, ...props }: DrawerPrimitive.Close.Props) {
   );
 }
 
+function DrawerSwipeHandle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      aria-hidden="true"
+      data-slot="drawer-swipe-handle"
+      className={cn(
+        "mx-auto h-1.5 w-12 touch-none rounded-full bg-muted-foreground/35",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
 export {
   Drawer,
   DrawerBackdrop,
@@ -117,4 +138,5 @@ export {
   DrawerTitle,
   DrawerTrigger,
   DrawerViewport,
+  DrawerSwipeHandle,
 };

@@ -126,10 +126,14 @@ function ResumeCard({
       <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-border pt-4 text-xs text-muted-foreground">
         <span className="inline-flex items-center gap-1.5">
           <BriefcaseBusiness aria-hidden="true" className="size-3.5" />
-          {resume.experience.length} {resume.experience.length === 1 ? "role" : "roles"}
+          {resume.experience.length}{" "}
+          {resume.experience.length === 1 ? "role" : "roles"}
         </span>
         <span>
-          Last updated <time dateTime={resume.updatedAt}>{formatUpdatedAt(resume.updatedAt)}</time>
+          Last updated{" "}
+          <time dateTime={resume.updatedAt}>
+            {formatUpdatedAt(resume.updatedAt)}
+          </time>
         </span>
       </div>
 
@@ -139,7 +143,10 @@ function ResumeCard({
         href={`/editor/${resume.id}`}
       >
         Open resume
-        <ArrowUpRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <ArrowUpRight
+          aria-hidden="true"
+          className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        />
       </Link>
     </article>
   );
@@ -167,17 +174,7 @@ const ResumesInfo = () => {
     return resumes
       .filter((resume) => {
         if (!normalizedQuery) return true;
-        const searchableText = [
-          resume.name,
-          resume.personalInfo.position,
-          resume.personalInfo.firstName,
-          resume.personalInfo.lastName,
-          ...resume.experience.flatMap((item) => [item.position, item.company]),
-        ]
-          .join(" ")
-          .toLocaleLowerCase();
-
-        return searchableText.includes(normalizedQuery);
+        return resume.name.toLocaleLowerCase().includes(normalizedQuery);
       })
       .sort((a, b) => {
         const aTime = a.updatedAt ? Date.parse(a.updatedAt) : 0;
@@ -202,7 +199,8 @@ const ResumesInfo = () => {
               create a fresh resume for your next opportunity.
             </p>
             <p className="mt-4 text-sm font-medium text-foreground">
-              {resumes.length} {resumes.length === 1 ? "resume" : "resumes"} saved in this browser
+              {resumes.length} {resumes.length === 1 ? "resume" : "resumes"}{" "}
+              saved
             </p>
           </div>
           <div className="relative shrink-0">
@@ -214,9 +212,11 @@ const ResumesInfo = () => {
       <section aria-label="Your resume library" className="mt-8 sm:mt-10">
         <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-xl font-semibold tracking-tight">Resume library</h2>
+            <h2 className="text-xl font-semibold tracking-tight">
+              Resume library
+            </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Search by resume name, job title, or company.
+              Search by resume name.
             </p>
           </div>
           {resumes.length > 0 && (
@@ -254,7 +254,9 @@ const ResumesInfo = () => {
             <span className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <FileText aria-hidden="true" className="size-5" />
             </span>
-            <h3 className="mt-4 text-lg font-semibold">Your library is ready</h3>
+            <h3 className="mt-4 text-lg font-semibold">
+              Your library is ready
+            </h3>
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted-foreground">
               Create your first resume and it will be saved in this browser for
               you to edit and download whenever you need it.
@@ -266,8 +268,12 @@ const ResumesInfo = () => {
         ) : filteredResumes.length > 0 ? (
           <>
             {query && (
-              <p className="mb-4 text-xs text-muted-foreground" aria-live="polite">
-                Showing {filteredResumes.length} of {resumes.length} {resumes.length === 1 ? "resume" : "resumes"}
+              <p
+                className="mb-4 text-xs text-muted-foreground"
+                aria-live="polite"
+              >
+                Showing {filteredResumes.length} of {resumes.length}{" "}
+                {resumes.length === 1 ? "resume" : "resumes"}
               </p>
             )}
             <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -282,7 +288,10 @@ const ResumesInfo = () => {
           </>
         ) : (
           <div className="rounded-2xl border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
-            <Search aria-hidden="true" className="mx-auto size-5 text-muted-foreground" />
+            <Search
+              aria-hidden="true"
+              className="mx-auto size-5 text-muted-foreground"
+            />
             <h3 className="mt-3 font-semibold">No matching resumes</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               Try another name, job title, or company.

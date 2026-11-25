@@ -30,6 +30,7 @@ import { ExperienceSection } from "./experience-section";
 import { PersonalInfoSection } from "./personal-info-section";
 import { ProfileSection } from "./profile-section";
 import { ProjectsSection } from "./projects-section";
+import { MobileResumePreview } from "./mobile-resume-preview";
 import { ResumePreview } from "./resume-preview";
 import { SkillsSection } from "./skills-section";
 import {
@@ -179,10 +180,10 @@ export default function ResumeEditor({ resumeId }: { resumeId: string }) {
   ];
 
   return (
-    <main className="resume-workspace min-h-[calc(100vh-72px)] animate-in fade-in-0 duration-300 bg-muted/70 motion-reduce:animate-none xl:h-[calc(100dvh-72px)] xl:min-h-0 xl:overflow-hidden">
-      <div className="grid min-h-full xl:h-full xl:min-h-0 xl:grid-cols-2">
-        <section className="flex min-h-0 flex-col border-b border-border xl:overflow-y-auto xl:overscroll-contain xl:border-b-0 xl:border-r">
-          <header className="sticky top-[72px] z-30 flex min-h-[76px] shrink-0 items-center justify-between gap-4 border-b border-border bg-background px-4 py-3 shadow-sm sm:px-6 xl:top-0 xl:px-8">
+    <main className="resume-workspace min-h-[calc(100vh-72px)] animate-in fade-in-0 duration-300 bg-muted/70 motion-reduce:animate-none">
+      <div className="grid min-h-full xl:grid-cols-2">
+        <section className="flex min-h-0 flex-col border-b border-border xl:border-b-0 xl:border-r">
+          <header className="sticky top-[73px] z-30 flex min-h-[76px] shrink-0 items-center justify-between gap-4 border-b border-border bg-background px-4 py-3 shadow-sm sm:px-6 xl:px-8">
             <div className="min-w-0">
               <Link
                 className="mb-1 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -217,7 +218,7 @@ export default function ResumeEditor({ resumeId }: { resumeId: string }) {
             </div>
           </header>
 
-          <div className="px-3 py-4 sm:px-5 sm:py-5">
+          <div className="px-3 py-4 pb-24 sm:px-5 sm:py-5 sm:pb-24 xl:pb-5">
             <div className="mx-auto max-w-[850px]">
               <div className="mb-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
@@ -360,7 +361,7 @@ export default function ResumeEditor({ resumeId }: { resumeId: string }) {
           </div>
         </section>
 
-        <aside className="flex min-h-0 flex-col bg-preview-stage xl:h-full xl:min-h-0">
+        <aside className="hidden min-h-0 flex-col bg-preview-stage xl:sticky xl:top-[73px] xl:flex xl:h-[calc(100dvh-73px)] xl:self-start">
           <header className="z-30 flex min-h-[76px] shrink-0 items-center justify-between border-b border-border bg-background px-4 py-3 shadow-sm sm:px-6 xl:px-8">
             <div>
               <h2 className="text-base font-semibold">Preview</h2>
@@ -380,6 +381,10 @@ export default function ResumeEditor({ resumeId }: { resumeId: string }) {
           </div>
         </aside>
       </div>
+      <MobileResumePreview
+        resume={resume}
+        downloadAction={<DownloadResumePdf resume={resume} />}
+      />
     </main>
   );
 }

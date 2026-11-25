@@ -21,7 +21,10 @@ export function ResumePdf({ resume }: { resume: TResume }) {
   const info = resume.personalInfo;
   const fullName = [info.firstName, info.lastName].filter(Boolean).join(" ");
   const contact = [info.address, info.email, info.phone].filter(Boolean);
-  const experiences = [...resume.experience, ...resume.internships].filter((item) =>
+  const experiences = resume.experience.filter((item) =>
+    [item.position, item.company, item.location, item.startDate, item.endDate, item.description, ...(item.achievements ?? [])].some((value) => value?.trim()),
+  );
+  const internships = resume.internships.filter((item) =>
     [item.position, item.company, item.location, item.startDate, item.endDate, item.description, ...(item.achievements ?? [])].some((value) => value?.trim()),
   );
   const socials = info.socialLinks.filter((link) => link.url);
@@ -64,6 +67,23 @@ export function ResumePdf({ resume }: { resume: TResume }) {
               <Entry key={item.id} last={index === experiences.length - 1}>
                 <EntryHeading title={organizationTitle(item.position, item.company, item.location)} dates={dateRange(item.startDate, item.endDate, item.present)} />
                 {item.description?.trim() && <Text style={styles.entryDescription}>{item.description}</Text>}
+                <BulletList items={item.achievements ?? []} />
+              </Entry>
+            ))}
+          </Section>
+        )}
+
+        {internships.length > 0 && (
+          <Section title="Internships">
+            {internships.map((item, index) => (
+              <Entry key={item.id} last={index === internships.length - 1}>
+                <EntryHeading
+                  title={organizationTitle(item.position, item.company, item.location)}
+                  dates={dateRange(item.startDate, item.endDate, item.present)}
+                />
+                {item.description?.trim() && (
+                  <Text style={styles.entryDescription}>{item.description}</Text>
+                )}
                 <BulletList items={item.achievements ?? []} />
               </Entry>
             ))}
