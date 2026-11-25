@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import CustomInput from "@/components/ui/custom-input";
 import { DatePickerInput } from "@/components/editor/date-picker-input";
 import { AchievementsEditor } from "@/components/editor/achievements-editor";
+import { getTodayDateValue } from "@/lib/utils";
 
 export function VolunteeringSection({ items, onChange }: { items: Volunteering[]; onChange: (items: Volunteering[]) => void }) {
   function update(id: string, field: keyof Volunteering, value: string) {
@@ -22,8 +23,8 @@ export function VolunteeringSection({ items, onChange }: { items: Volunteering[]
           <CustomInput input={{ name: `vol-position-${item.id}`, label: "Role", placeholder: "Your role", type: "text" }} value={item.position} onChange={(event) => update(item.id, "position", event.target.value)} />
           <CustomInput input={{ name: `vol-location-${item.id}`, label: "Location", placeholder: "City, Country", type: "text" }} value={item.location} onChange={(event) => update(item.id, "location", event.target.value)} />
           <CustomInput input={{ name: `vol-website-${item.id}`, label: "Organization website", placeholder: "https://", type: "text" }} type="url" value={item.organizationWebsite ?? ""} onChange={(event) => update(item.id, "organizationWebsite", event.target.value)} />
-          <DatePickerInput id={`vol-start-${item.id}`} label="Start date" value={item.startDate} onChange={(startDate) => update(item.id, "startDate", startDate)} />
-          <DatePickerInput id={`vol-end-${item.id}`} label="End date" value={item.endDate} disabled={item.present} onChange={(endDate) => onChange(items.map((entry) => entry.id === item.id ? { ...entry, endDate } : entry))} />
+          <DatePickerInput id={`vol-start-${item.id}`} label="Start date" value={item.startDate} defaultToToday onChange={(startDate) => update(item.id, "startDate", startDate)} />
+          <DatePickerInput id={`vol-end-${item.id}`} label="End date" value={item.endDate} defaultToToday disabled={item.present} onChange={(endDate) => onChange(items.map((entry) => entry.id === item.id ? { ...entry, endDate } : entry))} />
           <Field orientation="horizontal" className="sm:col-span-2"><Checkbox id={`vol-present-${item.id}`} checked={item.present} onCheckedChange={(checked) => onChange(items.map((entry) => entry.id === item.id ? { ...entry, present: checked === true, endDate: checked === true ? null : entry.endDate } : entry))} /><FieldLabel htmlFor={`vol-present-${item.id}`}>I currently volunteer here</FieldLabel></Field>
           <Field className="sm:col-span-2"><FieldLabel htmlFor={`vol-description-${item.id}`}>Description</FieldLabel><Textarea id={`vol-description-${item.id}`} value={item.description ?? ""} onChange={(event) => update(item.id, "description", event.target.value)} /></Field>
           <AchievementsEditor
@@ -33,7 +34,7 @@ export function VolunteeringSection({ items, onChange }: { items: Volunteering[]
           />
         </FieldGroup>
       </section>)}
-      <Button type="button" variant="outline" onClick={() => onChange([...items, { id: crypto.randomUUID(), organization: "", position: "", location: "", startDate: "", endDate: null, present: false, achievements: [] }])}><Plus />Add volunteering</Button>
+      <Button type="button" variant="outline" onClick={() => onChange([...items, { id: crypto.randomUUID(), organization: "", position: "", location: "", startDate: getTodayDateValue(), endDate: null, present: false, achievements: [] }])}><Plus />Add volunteering</Button>
     </div>
   );
 }

@@ -17,7 +17,7 @@ import {
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
-      <div className="container flex h-[72px] items-center justify-between">
+      <div className="container flex h-[71px] items-center justify-between">
         <Link
           href="/"
           className="flex items-center gap-2.5 font-semibold tracking-tight"

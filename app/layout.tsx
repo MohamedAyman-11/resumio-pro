@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { absoluteSiteUrl, siteUrl } from "@/lib/site";
 
 const inter = localFont({
@@ -52,8 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="relative min-h-full flex flex-col">
         <ThemeProvider>
           <Navbar />
-          <div className=" flex-1">{children}</div>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>

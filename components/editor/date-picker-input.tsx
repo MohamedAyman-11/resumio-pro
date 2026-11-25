@@ -1,13 +1,14 @@
 "use client";
 
 import { addMonths, format, isValid, parse, parseISO, subMonths } from "date-fns";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
+import { getTodayDateValue } from "@/lib/utils";
 
 function parseDate(value?: string | null) {
   if (!value) return undefined;
@@ -33,12 +34,19 @@ function displayDate(value?: string | null) {
   return date ? format(date, "MMM d, yyyy") : "";
 }
 
-export function DatePickerInput({ id, label, value, onChange, disabled }: { id: string; label: string; value?: string | null; onChange: (value: string) => void; disabled?: boolean }) {
+export function DatePickerInput({ id, label, value, onChange, disabled, defaultToToday = false }: { id: string; label: string; value?: string | null; onChange: (value: string) => void; disabled?: boolean; defaultToToday?: boolean }) {
   const [open, setOpen] = useState(false);
+  const initializedDefault = useRef(false);
   const selectedDate = parseDate(value);
   const [calendarMonth, setCalendarMonth] = useState(() => selectedDate ?? new Date());
   const [draftState, setDraftState] = useState({ sourceValue: value, text: displayDate(value) });
   const draft = draftState.sourceValue === value ? draftState.text : displayDate(value);
+
+  useEffect(() => {
+    if (!defaultToToday || value || disabled || initializedDefault.current) return;
+    initializedDefault.current = true;
+    onChange(getTodayDateValue());
+  }, [defaultToToday, disabled, onChange, value]);
 
   function commitDraft() {
     if (!draft.trim()) {

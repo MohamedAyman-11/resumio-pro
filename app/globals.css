@@ -357,12 +357,6 @@ body {
   margin-right: auto;
 }
 
-@media (min-width: 1280px) {
-  body:has(.resume-workspace) footer {
-    display: none;
-  }
-}
-
 @media print {
   @page {
     size: A4;
