@@ -1,46 +1,50 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:111827,45:312e81,100:0f766e&text=RESUMIO&fontColor=ffffff&fontSize=58&fontAlignY=38&desc=A%20resume%20that%20gets%20to%20the%20point.&descSize=17&descAlignY=62&animation=fadeIn" alt="Resumio — A resume that gets to the point" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=185&color=0:0f172a,48:312e81,100:0f766e&text=RESUMIO&fontColor=ffffff&fontSize=58&fontAlignY=39&desc=A%20resume%20that%20gets%20to%20the%20point.&descSize=17&descAlignY=64&animation=fadeIn" alt="Resumio — A resume that gets to the point" />
 
 <p>
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&duration=3200&pause=900&color=64748B&center=true&vCenter=true&width=540&lines=Write+with+clarity.;Preview+every+detail+live.;Export+a+searchable+PDF." alt="Write with clarity. Preview every detail live. Export a searchable PDF." />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=18&duration=3000&pause=1000&color=64748B&center=true&vCenter=true&width=560&lines=Write+with+clarity.;See+your+resume+take+shape.;Export+a+searchable+PDF." alt="Write with clarity. See your resume take shape. Export a searchable PDF." />
 </p>
 
 <p>
-  A focused resume builder for turning your experience into a polished, searchable A4 PDF.<br />
-  Build and manage multiple resumes right in your browser, with no account required.
+  Build a clear, polished resume in your browser. Organize your experience,<br />
+  review the live A4 preview, and download a searchable PDF—no account required.
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Next.js-16-111827?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 16" />
-  <img src="https://img.shields.io/badge/React-19-087EA4?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
+  <a href="https://resumio-pro.vercel.app/"><img src="https://img.shields.io/badge/LIVE_DEMO-0f766e?style=for-the-badge&logo=vercel&logoColor=white" alt="Open live demo" /></a>
+  <a href="https://github.com/MohamedAyman-11/resume-builder"><img src="https://img.shields.io/badge/SOURCE_CODE-111827?style=for-the-badge&logo=github&logoColor=white" alt="View GitHub repository" /></a>
 </p>
 
 <p>
-  <a href="https://github.com/MohamedAyman-11/resume-builder">Repository</a>
+  <a href="#features">Features</a> &nbsp;·&nbsp;
+  <a href="#stack">Tech stack</a> &nbsp;·&nbsp;
+  <a href="#contact">Contact</a>
 </p>
 
 </div>
 
 <br />
 
-## ✦ What you can do
+## Features
 
-| | Feature | Details |
-|:--:|:--|:--|
-| ◉ | **Write section by section** | Ten guided sections for your profile, experience, projects, education, and more. |
-| ◫ | **Preview as you edit** | A live A4 view keeps the finished layout in sight. |
-| ↗ | **Export a real PDF** | Download searchable text with selectable content and clickable links. |
-| ▤ | **Manage resume versions** | Keep separate resumes for different roles in one browser library. |
-| ◈ | **Keep your data local** | Resumes stay in this browser’s storage. No account or cloud sync. |
+<table>
+  <tr>
+    <td width="50%" valign="top"><strong>Live A4 preview</strong><br />See the resume layout update as you edit.</td>
+    <td width="50%" valign="top"><strong>Ten guided sections</strong><br />Bring profile, experience, projects, education, and more together.</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><strong>Searchable PDF export</strong><br />Download selectable text with clickable links.</td>
+    <td width="50%" valign="top"><strong>Multiple resume versions</strong><br />Keep role-specific resumes in one browser library.</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><strong>Local by design</strong><br />Resume data stays in your browser. No account or cloud sync.</td>
+  </tr>
+</table>
 
-<br />
+## Tech stack
 
-## ⚙ Built with
-
-<p>
+<p id="stack">
   <img src="https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -50,9 +54,16 @@
 
 <br />
 
+## Contact
+
+<p>
+  <a href="https://www.linkedin.com/in/mohamedayman-dev/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
+  <a href="https://mohamedaymann.tech"><img src="https://img.shields.io/badge/Portfolio-mohamedaymann.tech-111827?style=flat-square&logo=googlechrome&logoColor=white" alt="Visit personal portfolio" /></a>
+</p>
+
 <div align="center">
 
-**[Explore the repository](https://github.com/MohamedAyman-11/resume-builder)** · Built for clear, confident applications.
+Made for resumes that are easy to read—and ready to share.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:312e81,50:0f766e,100:312e81" alt="" />
 
