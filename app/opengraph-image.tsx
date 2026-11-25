@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "ResumeKit - Free resume builder with live preview and PDF export";
+export const alt = "Resumio - Free resume builder with live preview and PDF export";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
             >
               R
             </div>
-            <div style={{ fontSize: 25, fontWeight: 700 }}>ResumeKit</div>
+            <div style={{ fontSize: 25, fontWeight: 700 }}>Resumio</div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             <div

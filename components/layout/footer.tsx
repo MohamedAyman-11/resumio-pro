@@ -12,7 +12,7 @@ export function Footer() {
             className="inline-flex items-center gap-2 font-semibold tracking-tight"
           >
             <FileText aria-hidden="true" className="size-4 text-primary" />{" "}
-            resume<span className="-ml-2 text-primary">kit</span>
+            Resum<span className="-ml-2 text-primary">io</span>
           </Link>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
             A simpler way to tell your professional story.
@@ -33,7 +33,7 @@ export function Footer() {
           ))}
         </nav>
         <p className="text-xs text-muted-foreground">
-          © 2026 ResumeKit. Made by{" "}
+          © 2026 Resumio. Made by{" "}
           <a
             href="https://github.com/MohamedAyman-11"
             target="_blank"

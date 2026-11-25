@@ -21,13 +21,13 @@ export function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-2.5 font-semibold tracking-tight"
-          aria-label="ResumeKit home"
+          aria-label="Resumio home"
         >
           <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <FileText aria-hidden="true" className="size-4" />
           </span>
           <span className="text-base">
-            resume<span className="text-primary">kit</span>
+            Resum<span className="text-primary">io</span>
           </span>
         </Link>
 
@@ -41,7 +41,7 @@ export function Navbar() {
             href="https://github.com/MohamedAyman-11/resume-builder"
             target="_blank"
             rel="noreferrer"
-            aria-label="View ResumeKit on GitHub"
+            aria-label="View Resumio on GitHub"
             title="GitHub repository"
             className="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 ease-out hover:bg-primary/10 hover:text-primary active:scale-95 active:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 motion-reduce:transition-none motion-reduce:active:scale-100"
           >
@@ -66,7 +66,7 @@ export function Navbar() {
             href="https://github.com/MohamedAyman-11/resume-builder"
             target="_blank"
             rel="noreferrer"
-            aria-label="View ResumeKit on GitHub"
+            aria-label="View Resumio on GitHub"
             title="GitHub repository"
             className="flex size-10 items-center justify-center rounded-full text-muted-foreground transition-[color,background-color,transform] duration-300 ease-out hover:bg-primary/10 hover:text-primary active:scale-95 active:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 motion-reduce:transition-none motion-reduce:active:scale-100"
           >

@@ -340,16 +340,6 @@ body {
   margin-top: 2pt;
 }
 
-.hero-section::before {
-  position: absolute;
-  inset: 0 0 0 auto;
-  z-index: -1;
-  width: min(58%, 760px);
-  background: radial-gradient(ellipse at 60% 45%, color-mix(in srgb, var(--primary) 7%, transparent), transparent 68%);
-  content: "";
-  pointer-events: none;
-}
-
 .container {
   padding-left: 15px;
   padding-right: 15px;

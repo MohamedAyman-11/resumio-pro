@@ -4,7 +4,7 @@ import { absoluteSiteUrl } from "@/lib/site";
 const appSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "ResumeKit",
+  name: "Resumio",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   isAccessibleForFree: true,

@@ -15,26 +15,26 @@ const inter = localFont({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Free Resume Builder | Build and Download a Resume PDF",
-    template: "%s | ResumeKit",
+    default: "Resumio | Free Resume Builder and PDF Export",
+    template: "%s | Resumio",
   },
   description:
     "Build a clear resume with a live preview, organize your experience, and download a searchable A4 PDF. Free to use, no account required.",
-  applicationName: "ResumeKit",
+  applicationName: "Resumio",
   category: "productivity",
   alternates: siteUrl ? { canonical: absoluteSiteUrl("/") } : undefined,
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "ResumeKit",
-    title: "Free Resume Builder | Build and Download a Resume PDF",
+    siteName: "Resumio",
+    title: "Resumio | Free Resume Builder and PDF Export",
     description:
       "Build a clear resume with a live preview, organize your experience, and download a searchable A4 PDF.",
     url: absoluteSiteUrl("/"),
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Resume Builder | ResumeKit",
+    title: "Resumio | Free Resume Builder",
     description:
       "Create a clear resume with a live preview and download a searchable A4 PDF. Free to use, no account required.",
   },

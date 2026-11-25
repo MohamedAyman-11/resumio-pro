@@ -17,7 +17,7 @@ import { absoluteSiteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Resume Builder Features",
   description:
-    "Explore ResumeKit features: live resume preview, ten guided sections, a searchable PDF download, and browser-based resume storage.",
+    "Explore Resumio features: live resume preview, ten guided sections, a searchable PDF download, and browser-based resume storage.",
   alternates: {
     canonical: absoluteSiteUrl("/features"),
   },
@@ -51,7 +51,7 @@ const features = [
   {
     title: "Saved in this browser",
     description:
-      "ResumeKit stores your resume data in this browser’s local storage. There is no account or cloud sync.",
+      "Resumio stores your resume data in this browser’s local storage. There is no account or cloud sync.",
     icon: LockKeyhole,
   },
   {
@@ -81,7 +81,7 @@ export default function FeaturesPage() {
       <section className="border-b border-border bg-background py-16 sm:py-20">
         <div className="container">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-            ResumeKit features
+            Resumio features
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
             Everything you need to make a clear resume.
@@ -168,7 +168,7 @@ export default function FeaturesPage() {
                 Your resumes stay in your browser.
               </h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                ResumeKit saves resumes in local storage on the browser and
+                Resumio saves resumes in local storage on the browser and
                 device you use. There is no account or cloud sync, so your
                 library will not follow you to another browser. Download a PDF
                 if you need a portable copy.

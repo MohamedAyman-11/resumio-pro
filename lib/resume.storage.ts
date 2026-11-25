@@ -1,7 +1,7 @@
 import { TResume } from "@/types/resume";
 
 const RESUMES_STORAGE_KEY = "resumes";
-export const RESUMES_UPDATED_EVENT = "resumekit:resumes-updated";
+export const RESUMES_UPDATED_EVENT = "resumio:resumes-updated";
 
 const notifyResumesUpdated = () => {
   if (typeof window !== "undefined") {

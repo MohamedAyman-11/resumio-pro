@@ -93,7 +93,7 @@ export const homeQuestions: HomeQuestion[] = [
   {
     question: "Is this actually free? What's the catch?",
     answer:
-      "Yes. ResumeKit is designed to keep resume creation free, with no subscriptions or surprise fees.",
+      "Yes. Resumio is designed to keep resume creation free, with no subscriptions or surprise fees.",
   },
   {
     question: "Where is my data stored?",

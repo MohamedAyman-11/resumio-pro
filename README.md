@@ -1,6 +1,6 @@
-# ResumeKit
+# Resumio
 
-ResumeKit is a browser-based resume builder. Create multiple resumes, edit ten sections with a live A4 preview, and download a searchable PDF with clickable links.
+Resumio is a browser-based resume builder. Create multiple resumes, edit ten sections with a live A4 preview, and download a searchable PDF with clickable links.
 
 ## Features
 

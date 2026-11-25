@@ -41,7 +41,7 @@ export function MobileNavigation() {
                   <div>
                     <DrawerTitle>Menu</DrawerTitle>
                     <DrawerDescription className="mt-1">
-                      Find your way around ResumeKit.
+                      Find your way around Resumio.
                     </DrawerDescription>
                   </div>
                   <DrawerClose

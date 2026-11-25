@@ -30,7 +30,7 @@ export function ResumePreviewSection() {
             ></Button>
           </div>
         </div>
-        <div className="rounded-2xl bg-muted/60 p-2 min-[420px]:p-4 sm:p-7">
+        <div className="hidden rounded-2xl bg-muted/60 p-2 min-[420px]:p-4 sm:p-7 lg:block">
           <ResumePreview />
         </div>
       </div>
