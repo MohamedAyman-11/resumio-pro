@@ -45,5 +45,5 @@ Have a suggestion or need a customization? Reach out:
 <p>
   <a href="mailto:mohamedaymanhashis13@gmail.com"><img src="https://img.shields.io/badge/Email-Contact%20me-c0392b?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Mohamed Ayman" /></a>
   <a href="https://www.linkedin.com/in/mohamedayman-dev/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn" /></a>
-  <a href="https://mohamedaymann.tech"><img src="https://img.shields.io/badge/Portfolio-Visit-334155?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit portfolio" /></a>
+  <!-- <a href="https://mohamedaymann.tech"><img src="https://img.shields.io/badge/Portfolio-Visit-334155?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit portfolio" /></a> -->
 </p>
