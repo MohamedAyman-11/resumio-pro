@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { ResumePreview } from "@/components/home/resume-preview";
 import { Button } from "@/components/ui/button";
 import {
@@ -75,7 +75,7 @@ export function HeroSection() {
   );
 }
 
-const heroItem = {
+const heroItem: Variants = {
   hidden: { opacity: 0, y: 14 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
 };
