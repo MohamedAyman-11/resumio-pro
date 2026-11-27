@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Resumio - Free resume builder with live preview and PDF export";
+export const alt =
+  "Resumio, a free resume builder with a live A4 preview and searchable PDF export";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,16 +64,16 @@ export default function OpenGraphImage() {
             <div
               style={{
                 maxWidth: 610,
-                fontSize: 58,
-                lineHeight: 1.08,
+                fontSize: 60,
+                lineHeight: 1.04,
                 fontWeight: 700,
                 letterSpacing: "-0.04em",
               }}
             >
-              Make your experience easy to see.
+              A resume that gets to the point.
             </div>
             <div style={{ color: "#586174", fontSize: 22, lineHeight: 1.4 }}>
-              Live preview. Clean A4 layout. Searchable PDF.
+              Build a clear resume with a live A4 preview and searchable PDF export.
             </div>
           </div>
           <div style={{ color: "#586174", fontSize: 18, fontWeight: 600 }}>
