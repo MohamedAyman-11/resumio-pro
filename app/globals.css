@@ -423,7 +423,8 @@ body {
 
 @media (max-width: 640px) {
   .resume-paper {
-    min-height: auto;
+    min-height: 0;
+    aspect-ratio: 210 / 297;
     padding: 24pt 22pt;
   }
 
