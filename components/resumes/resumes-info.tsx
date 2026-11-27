@@ -32,28 +32,15 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
-function formatUpdatedAt(value?: string) {
-  if (!value) return "Date unavailable";
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Date unavailable";
-
-  return new Intl.DateTimeFormat(undefined, {
-    dateStyle: "medium",
-    timeStyle: "short",
-  }).format(date);
-}
-
-function getResumeDescription(resume: TResume) {
-  const position = resume.personalInfo.position.trim();
-  const company = resume.experience[0]?.company.trim();
-
-  if (position && company) return `${position} · ${company}`;
-  if (position) return position;
-  if (company) return company;
-  return "Add a role and experience to bring this resume to life.";
-}
+import { getResumeDescription, formatUpdatedAt } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+import {
+  Reveal,
+  VIEW_REVEAL_INITIAL,
+  VIEW_REVEAL_TARGET,
+  VIEW_REVEAL_TRANSITION,
+  VIEW_REVEAL_VIEWPORT,
+} from "@/components/shared/reveal";
 
 const searchInput: TInput = {
   name: "resume-search",
@@ -70,7 +57,16 @@ function ResumeCard({
   onDelete: (id: string) => void;
 }) {
   return (
-    <article className="group relative flex min-h-56 flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-foreground/[0.04] sm:p-6">
+    <motion.article
+      layout
+      initial={VIEW_REVEAL_INITIAL}
+      whileInView={VIEW_REVEAL_TARGET}
+      viewport={VIEW_REVEAL_VIEWPORT}
+      exit={{ opacity: 0, scale: 0.97 }}
+      whileHover={{ y: -3, transition: { duration: 0.26 } }}
+      transition={VIEW_REVEAL_TRANSITION}
+      className="group relative flex min-h-56 flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-lg hover:shadow-foreground/[0.04] sm:p-6"
+    >
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-inset ring-primary/10">
@@ -148,7 +144,7 @@ function ResumeCard({
           className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
         />
       </Link>
-    </article>
+    </motion.article>
   );
 }
 
@@ -185,7 +181,7 @@ const ResumesInfo = () => {
 
   return (
     <main className="py-10 sm:py-14">
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-7 shadow-sm sm:px-8 sm:py-9">
+      <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-7 shadow-sm sm:px-8 sm:py-9" mode="mount" duration={1}>
         <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
@@ -207,9 +203,10 @@ const ResumesInfo = () => {
             <CreateResume />
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section aria-label="Your resume library" className="mt-8 sm:mt-10">
+      <Reveal className="mt-8 sm:mt-10" duration={1}>
+      <section aria-label="Your resume library">
         <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-xl font-semibold tracking-tight">
@@ -230,7 +227,6 @@ const ResumesInfo = () => {
                 startAdornment={
                   <Search className="size-4 text-muted-foreground" />
                 }
-                type="search"
                 value={query}
               />
               {query && (
@@ -276,7 +272,8 @@ const ResumesInfo = () => {
                 {resumes.length === 1 ? "resume" : "resumes"}
               </p>
             )}
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <motion.div layout className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <AnimatePresence>
               {filteredResumes.map((resume) => (
                 <ResumeCard
                   key={resume.id}
@@ -284,7 +281,8 @@ const ResumesInfo = () => {
                   resume={resume}
                 />
               ))}
-            </div>
+              </AnimatePresence>
+            </motion.div>
           </>
         ) : (
           <div className="rounded-2xl border border-dashed border-border bg-muted/30 px-6 py-12 text-center">
@@ -307,6 +305,7 @@ const ResumesInfo = () => {
           </div>
         )}
       </section>
+      </Reveal>
     </main>
   );
 };

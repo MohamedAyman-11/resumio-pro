@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { absoluteSiteUrl, siteUrl } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
+import { MotionProvider } from "@/components/shared/motion-provider";
 
 const inter = localFont({
   src: "../public/fonts/inter-latin-wght-normal.woff2",
@@ -51,8 +52,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="relative min-h-full flex flex-col">
         <ThemeProvider>
-          <Navbar />
-          {children}
+          <MotionProvider>
+            <Navbar />
+            {children}
+          </MotionProvider>
         </ThemeProvider>
         <Analytics />
       </body>

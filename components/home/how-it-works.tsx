@@ -1,20 +1,31 @@
+"use client";
+
+import { motion } from "motion/react";
 import { homeSteps } from "@/constants/home.constants";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { Reveal } from "@/components/shared/reveal";
 
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="scroll-mt-24 py-16 sm:py-20">
       <div className="container">
+        <Reveal>
         <SectionHeading
           eyebrow="HOW IT WORKS"
           title="A clear process, step by step."
           description="Move from your first details to a finished resume with a few straightforward steps."
         />
+        </Reveal>
         <div className="mt-9 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {homeSteps.map(({ number, title, description, icon: Icon }) => (
-            <article
+            <motion.article
               key={number}
               className="rounded-xl border border-border bg-card p-5 sm:p-6"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, delay: Number(number) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4, transition: { duration: 0.28 } }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -30,7 +41,7 @@ export function HowItWorks() {
               <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
                 {description}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

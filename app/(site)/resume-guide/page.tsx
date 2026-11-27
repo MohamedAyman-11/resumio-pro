@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { homePrimaryButtonClass } from "@/components/shared/home-styles";
 import { absoluteSiteUrl } from "@/lib/site";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "How to Write a Resume: A Practical Guide",
@@ -34,7 +35,7 @@ export default function ResumeGuidePage() {
   return (
     <main>
       <header className="border-b border-border bg-background py-16 sm:py-20">
-        <div className="container">
+        <Reveal className="container" mode="mount" duration={1}>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
             Resume writing guide
           </p>
@@ -49,13 +50,14 @@ export default function ResumeGuidePage() {
             Start with your real experience. Keep each detail accurate and
             relevant to the role.
           </p>
-        </div>
+        </Reveal>
       </header>
 
       <div className="container grid gap-12 py-12 sm:py-16 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
+        <Reveal className="h-fit lg:sticky lg:top-24" duration={1}>
         <nav
           aria-label="On this page"
-          className="h-fit rounded-2xl border border-border bg-card p-5 lg:sticky lg:top-24"
+          className="rounded-2xl border border-border bg-card p-5"
         >
           <h2 className="text-sm font-semibold">On this page</h2>
           <ul className="mt-3 space-y-2.5">
@@ -71,8 +73,10 @@ export default function ResumeGuidePage() {
             ))}
           </ul>
         </nav>
+        </Reveal>
 
         <article className="min-w-0 max-w-3xl space-y-10">
+          <Reveal duration={1}>
           <section id="start-with-the-role" className="scroll-mt-28">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Start with the role you want
@@ -84,7 +88,9 @@ export default function ResumeGuidePage() {
               resume can be tailored for each role without changing the facts.
             </p>
           </section>
+          </Reveal>
 
+          <Reveal delay={0.08} duration={1}>
           <section id="write-a-clear-profile" className="scroll-mt-28">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Write a clear profile
@@ -95,7 +101,9 @@ export default function ResumeGuidePage() {
               vague claims; a specific summary is easier to trust and remember.
             </p>
           </section>
+          </Reveal>
 
+          <Reveal delay={0.08} duration={1}>
           <section id="describe-your-work" className="scroll-mt-28">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Describe your work with useful detail
@@ -120,7 +128,9 @@ export default function ResumeGuidePage() {
               </p>
             </div>
           </section>
+          </Reveal>
 
+          <Reveal delay={0.08} duration={1}>
           <section id="choose-relevant-sections" className="scroll-mt-28">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Choose sections that support your story
@@ -138,7 +148,9 @@ export default function ResumeGuidePage() {
               one.
             </p>
           </section>
+          </Reveal>
 
+          <Reveal delay={0.08} duration={1}>
           <section id="review-before-sending" className="scroll-mt-28">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Review the resume before sending
@@ -158,7 +170,9 @@ export default function ResumeGuidePage() {
               before you submit it.
             </p>
           </section>
+          </Reveal>
 
+          <Reveal delay={0.08} duration={1}>
           <section className="rounded-2xl border border-border bg-muted/35 p-6 sm:p-8">
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
               Ready to put it together?
@@ -179,6 +193,7 @@ export default function ResumeGuidePage() {
               className={`${homePrimaryButtonClass} mt-5`}
             />
           </section>
+          </Reveal>
         </article>
       </div>
     </main>

@@ -13,6 +13,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { homePrimaryButtonClass } from "@/components/shared/home-styles";
 import { absoluteSiteUrl } from "@/lib/site";
+import { Reveal } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "Resume Builder Features",
@@ -79,7 +80,7 @@ export default function FeaturesPage() {
   return (
     <main>
       <section className="border-b border-border bg-background py-16 sm:py-20">
-        <div className="container">
+        <Reveal className="container" mode="mount" duration={1}>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
             Resumio features
           </p>
@@ -101,7 +102,7 @@ export default function FeaturesPage() {
             size="lg"
             className={`${homePrimaryButtonClass} mt-7`}
           />
-        </div>
+        </Reveal>
       </section>
 
       <section className="py-16 sm:py-20">
@@ -113,10 +114,8 @@ export default function FeaturesPage() {
           />
           <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {features.map(({ title, description, icon: Icon }) => (
-              <article
-                key={title}
-                className="rounded-2xl border border-border bg-card p-5 sm:p-6"
-              >
+              <Reveal key={title} className="h-full" hoverLift delay={0.08} duration={1}>
+              <article className="h-full rounded-2xl border border-border bg-card p-5 sm:p-6">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon aria-hidden="true" className="size-5" />
                 </span>
@@ -127,6 +126,7 @@ export default function FeaturesPage() {
                   {description}
                 </p>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -134,6 +134,7 @@ export default function FeaturesPage() {
 
       <section className="border-y border-border bg-muted/30 py-16 sm:py-20">
         <div className="container grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+          <Reveal duration={1}>
           <SectionHeading
             align="left"
             eyebrow="YOUR EXPERIENCE, ORGANIZED"
@@ -141,11 +142,13 @@ export default function FeaturesPage() {
             description="Each section has fields for the information people expect to find, with room for your own details and achievements."
             className="w-full"
           />
+          </Reveal>
+          <Reveal className="w-full" delay={0.08} duration={1}>
           <ul className="grid gap-2 sm:grid-cols-2">
             {resumeSections.map((section, index) => (
               <li
                 key={section}
-                className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium"
+                className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium transition-colors duration-200 hover:border-primary/30"
               >
                 <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-primary/10 text-[11px] font-semibold text-primary">
                   {String(index + 1).padStart(2, "0")}
@@ -154,12 +157,13 @@ export default function FeaturesPage() {
               </li>
             ))}
           </ul>
+          </Reveal>
         </div>
       </section>
 
       <section className="py-16 sm:py-20">
         <div className="container">
-          <div className="rounded-2xl border border-border bg-card px-6 py-8 sm:px-9 sm:py-10">
+          <Reveal className="rounded-2xl border border-border bg-card px-6 py-8 sm:px-9 sm:py-10" duration={1}>
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                 Your data
@@ -186,7 +190,7 @@ export default function FeaturesPage() {
               size="lg"
               className="mt-6"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
     </main>

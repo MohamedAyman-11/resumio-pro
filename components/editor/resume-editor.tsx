@@ -40,7 +40,10 @@ import {
 import { VolunteeringSection } from "./volunteering-section";
 
 const DownloadResumePdf = dynamic(
-  () => import("./pdf/download-resume-pdf").then((module) => module.DownloadResumePdf),
+  () =>
+    import("./pdf/download-resume-pdf").then(
+      (module) => module.DownloadResumePdf,
+    ),
   {
     ssr: false,
     loading: () => (
@@ -73,8 +76,7 @@ export default function ResumeEditor({ resumeId }: { resumeId: string }) {
   useEffect(() => {
     const savedResume =
       getResumes().find((item) => item.id === resumeId) ?? null;
-    // localStorage is only available in the browser, so load the resume after mount.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+
     setResume(savedResume);
     setLoading(false);
   }, [resumeId]);
